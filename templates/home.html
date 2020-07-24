@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Game</title>
+    <style>
+        body{
+        text-align: center
+        }
+
+    </style>
+</head>
+<body>
+<h1> Enter your move in sub url for example /rock or /paper or /scissor or select below what you want to play </h1>
+<p>You played {{content['a']}} and computer played {{content['b']}}</p>
+<h2>
+{% if content['a'] == content['b'] %}
+      <p> tied </p>
+
+{% elif content['a'] == 'rock' and content['b'] == 'paper' %}
+      <p>Computer Won</p>
+
+{% elif content['a'] == 'rock' and content['b'] == 'scissor' %}
+<p>You won</p>
+
+{% elif content['a'] == 'paper' and content['b'] == 'scissor' %}
+<p>Computer Won</p>
+{% elif content['a'] == 'paper' and content['b'] == 'rock' %}
+<p>You won </p>
+{% elif content['a'] == 'scissor' and content['b'] == 'rock'%}
+<p>Computer won</p>
+{% elif content['a'] == 'scissor' and content['b'] == 'paper' %}
+<p>You won </p>
+
+{% endif %}
+
+</h2>
+
+<a href="http://127.0.0.1:5000/rock"><h2> Click here to play Rock </h2></a>
+<a href="http://127.0.0.1:5000/paper"><h2> Click here to play Paper </h2></a>
+<a href="http://127.0.0.1:5000/scissor"><h2> Click here to play Scissor </h2></a>
+</body>
+</html>
